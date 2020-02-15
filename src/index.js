@@ -1,25 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Provider } from 'react-redux';
+import './config/ReactotronConfig';
+import { StatusBar } from 'react-native';
+import store from './store';
 
-function App() {
+import Routes from './routes';
+import NavigationService from './services/navigation';
+
+export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'blue',
-      }}
-    >
-      <Text
-        style={{
-          color: 'white',
-        }}
-      >
-        Hello
-      </Text>
-    </View>
+    <Provider store={store}>
+      <StatusBar barStyle="light-content" />
+      <Routes
+        ref={navigatorRef => NavigationService.setNavigator(navigatorRef)}
+      />
+    </Provider>
   );
 }
-
-export default App;
