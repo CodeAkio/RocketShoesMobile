@@ -84,7 +84,11 @@ function Home() {
 
 Home.propTypes = {
   // eslint-disable-next-line react/no-unused-prop-types
-  item: PropTypes.shape().isRequired,
+  item: PropTypes.shape(),
+};
+
+Home.defaultProps = {
+  item: {},
 };
 
 export default Home;
