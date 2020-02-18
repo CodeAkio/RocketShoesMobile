@@ -23,7 +23,11 @@ function Header({ navigation }) {
 }
 
 Header.propTypes = {
-  navigation: PropTypes.func.isRequired,
+  navigation: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.func,
+    PropTypes.shape(),
+  ]).isRequired,
 };
 
 export default Header;
