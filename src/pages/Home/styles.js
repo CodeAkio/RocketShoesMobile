@@ -3,15 +3,17 @@ import { darken } from 'polished';
 import colors from '../../styles/colors';
 
 export const Container = styled.View`
+  flex: 1;
   background: ${colors.dark};
 `;
 
 export const Product = styled.View`
+  flex: 1;
   background: #fff;
   padding: 10px;
   margin: 15px;
   border-radius: 4px;
-  width: 220px;
+  align-items: center;
 `;
 
 export const ProductImage = styled.Image`
